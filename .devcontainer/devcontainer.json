@@ -3,10 +3,20 @@
 {
 	"name": "Rust",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
+	// "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+    },
 	"features": {
-		"ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {}
-	}
+		"ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers/features/rust:1": {}
+	},
+	"extensions":[
+		"vscodevim.vim",
+		"esbenp.prettier-vscode"
+	]
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	// "mounts": [
