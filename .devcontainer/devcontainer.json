@@ -1,44 +1,79 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Rust",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-	"build": {
-        // Path is relative to the devcontainer.json file.
-        "dockerfile": "Dockerfile"
-    },
-	"features": {
-		"ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers/features/rust:1": {}
-	},
-	"extensions":[
-		"vscodevim.vim",
-		"esbenp.prettier-vscode"
-	]
+  "name": "Rust",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  // Dockerfileを使う場合は build セクションを有効化して imageセクションを無効化する
+  // 参考: https://containers.dev/guide/dockerfile
+  //"build": {
+  // Path is relative to the devcontainer.json file.
+  //    "dockerfile": "Dockerfile"
+  //},
+  "features": {
+    "ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro Flat",
+        "workbench.panel.defaultLocation": "right",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnType": true,
+        "editor.stickyScroll.enabled": true,
+        "editor.lineNumbers": "relative",
+        "editor.cursorBlinking": "smooth",
+        "editor.insertSpaces": true,
+        "vim.leader": "<Space>",
+        "vim.useSystemClipboard": true,
+        "vim.hlsearch": true,
+        "vim.incsearch": true,
+        "vim.startofline": false,
+        "vim.visualstar": true,
+        "vim.foldfix": true,
+        "vim.surround": true,
+        "vim.easymotion": true,
+        "vim.easymotionKeys": "asdfhjkl",
+        "[json][jsonc]": {
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.suggest.insertMode": "replace",
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      },
+      "extensions": [
+        "vscodevim.vim",
+        "esbenp.prettier-vscode",
+        "zhuangtongfa.material-theme"
+      ]
+    }
+  }
 
-	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
-	// "mounts": [
-	// 	{
-	// 		"source": "devcontainer-cargo-cache-${devcontainerId}",
-	// 		"target": "/usr/local/cargo",
-	// 		"type": "volume"
-	// 	}
-	// ]
+  // Use 'mounts' to make the cargo cache persistent in a Docker Volume.
+  // "mounts": [
+  // 	{
+  // 		"source": "devcontainer-cargo-cache-${devcontainerId}",
+  // 		"target": "/usr/local/cargo",
+  // 		"type": "volume"
+  // 	}
+  // ]
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "rustc --version",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "rustc --version",
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  // Configure tool-specific properties.
+  // "customizations": {},
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
