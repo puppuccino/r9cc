@@ -18,6 +18,22 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          },
+          "fish": {
+            "path": "fish"
+          },
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          }
+        },
         "terminal.integrated.defaultProfile.linux": "zsh",
         "workbench.colorTheme": "One Dark Pro Flat",
         "workbench.panel.defaultLocation": "right",
