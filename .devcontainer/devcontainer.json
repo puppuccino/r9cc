@@ -3,16 +3,14 @@
 {
   "name": "Rust",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  // "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   // Dockerfileを使う場合は build セクションを有効化して imageセクションを無効化する
   // 参考: https://containers.dev/guide/dockerfile
-  //"build": {
-  // Path is relative to the devcontainer.json file.
-  //    "dockerfile": "Dockerfile"
-  //},
+  "build": {
+    // Path is relative to the devcontainer.json file.
+    "dockerfile": "Dockerfile"
+  },
   "features": {
-    "ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
-    "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/devcontainers/features/rust:1": {}
   },
   "customizations": {
@@ -49,7 +47,8 @@
       "extensions": [
         "vscodevim.vim",
         "esbenp.prettier-vscode",
-        "zhuangtongfa.material-theme"
+        "zhuangtongfa.material-theme",
+        "ms-azuretools.vscode-docker"
       ]
     }
   }
